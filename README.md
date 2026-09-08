@@ -38,7 +38,6 @@ The project focuses on a sophisticated luxury real-estate experience with respon
 
 ### 📁 Project Structure
 
-```bash
 ashworth-vale/
 ├── index.html          # Home page
 ├── properties.html     # Properties page
