@@ -38,14 +38,13 @@ The project focuses on a sophisticated luxury real-estate experience with respon
 
 ### 📁 Project Structure
 
-ashworth-vale/
-├── index.html          # Home page
-├── properties.html     # Properties page
-├── agents.html         # Agents page
-├── contact.html        # Contact page
-└── assets/
-    ├── style.css       # Main stylesheet (Theming, Layouts, Animations)
-    └── script.js       # Main JavaScript (Interactivity)
+- `index.html` — Home page
+- `properties.html` — Properties page
+- `agents.html` — Agents page
+- `contact.html` — Contact page
+- `assets/`
+  - `style.css` — Main stylesheet (Theming, Layouts, Animations)
+  - `script.js` — Main JavaScript (Interactivity)
 
     👩‍💻 Developer
 Swatismita Parida
