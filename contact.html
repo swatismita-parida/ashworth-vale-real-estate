@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ashworth &amp; Vale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="brand">Ashworth <em>&amp; Vale</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="properties.html">Properties</a></li>
+      <li><a href="agents.html">Agents</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-panel">
+  <a href="index.html">Home</a>
+  <a href="properties.html">Properties</a>
+  <a href="agents.html">Agents</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-hero">
+  <div class="container">
+    <span class="eyebrow-mark">Get in touch</span>
+    <h1>Ask a question, or book a viewing</h1>
+    <p>Send us the details below and the right agent for your area will follow up, usually within one working day.</p>
+  </div>
+</header>
+
+<!-- ================= LOCATION ================= -->
+<section class="section--tight">
+  <div class="container">
+    <div class="location-wrap reveal">
+      <div class="location-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=85.78%2C20.24%2C85.86%2C20.32&layer=mapnik&marker=20.28%2C85.82" title="Office location map" loading="lazy"></iframe>
+      </div>
+      <div class="location-info">
+        <span class="eyebrow-mark">Our office</span>
+        <h3 class="mt-64" style="margin-top:16px;">Janpath Tower, Bhubaneswar</h3>
+        <div class="loc-row"><div><strong>Address</strong>Unit 4, Janpath Tower, Bhubaneswar, Odisha 751001</div></div>
+        <div class="loc-row"><div><strong>Phone</strong>+91 674 220 5511</div></div>
+        <div class="loc-row"><div><strong>Email</strong>hello@ashworthvale.in</div></div>
+        <div class="loc-row"><div><strong>Hours</strong>Monday – Saturday, 10:00 – 19:00</div></div>
+        <a href="tel:+916742205511" class="btn btn-outline">Call the office</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRY FORM ================= -->
+<section class="section section--alt">
+  <div class="container" style="max-width:860px;">
+    <div class="section-head reveal" style="flex-direction:column; align-items:flex-start;">
+      <span class="eyebrow-mark">Enquiry form</span>
+      <h2>Tell us what you're looking for</h2>
+    </div>
+
+    <div class="reveal">
+      <form data-validate novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" required>
+            <span class="error"></span>
+          </div>
+          <div class="field">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select one</option>
+              <option>Buying a home</option>
+              <option>Renting a home</option>
+              <option>Selling a property</option>
+              <option>Commercial space</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about the home you're looking for, or the property you'd like to sell."></textarea>
+            <span class="error"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send enquiry</button>
+        <p class="form-note">We reply within one working day. No spam, ever.</p>
+      </form>
+      <div class="form-success">Thank you — your enquiry has been received. An agent will reach out shortly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    <div class="section-head reveal" style="flex-direction:column; align-items:flex-start;">
+      <span class="eyebrow-mark">Common questions</span>
+      <h2>Before you reach out</h2>
+    </div>
+
+    <div class="reveal">
+      <div class="faq-item open">
+        <button class="faq-q"><span>How quickly will an agent respond?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Most enquiries get a reply within one working day. For same-day viewing requests, calling the office directly is faster.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you charge buyers a fee?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>No — our fee is paid by the seller or landlord. Buyers and tenants work with us at no direct cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Can you help with properties outside Bhubaneswar?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>We primarily cover Bhubaneswar and nearby districts like Khordha and Cuttack. For other cities, we can refer you to a trusted partner agency.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What documents do I need to start viewing homes?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>None to begin viewing — we'll only need ID and address proof once you're ready to make an offer or sign a lease.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="display:inline-flex; margin-bottom:14px;">Ashworth <em>&amp; Vale</em></a>
+        <p style="font-size:14px; color:var(--ink-soft); max-width:30ch;">A small real estate practice working across Bhubaneswar and the surrounding districts.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="agents.html">Agents</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="properties.html">Villas</a></li>
+          <li><a href="properties.html">Apartments</a></li>
+          <li><a href="properties.html">Plots</a></li>
+          <li><a href="properties.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Unit 4, Janpath Tower, Bhubaneswar</li>
+          <li>+91 674 220 5511</li>
+          <li>hello@ashworthvale.in</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ashworth &amp; Vale Real Estate. All rights reserved.</span>
+      <span>Built as a design study — not a licensed brokerage.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="Back to top">↑</button>
+<script src="assets/script.js"></script>
+</body>
+</html>
