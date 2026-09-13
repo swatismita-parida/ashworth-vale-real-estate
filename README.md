@@ -31,7 +31,7 @@ A premium full-stack real estate website created during my **Full-Stack Develope
 
 
 ## 📁 Structure
-=======
+
 - `index.html` — Home page
 - `properties.html` — Properties page
 - `agents.html` — Agents page
