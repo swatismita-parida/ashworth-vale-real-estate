@@ -31,7 +31,7 @@ A premium full-stack real estate website created during my **Full-Stack Develope
 
 
 ## 📁 Structure
-=======
+
 - `index.html` — Home page
 - `properties.html` — Properties page
 - `agents.html` — Agents page
@@ -43,12 +43,8 @@ A premium full-stack real estate website created during my **Full-Stack Develope
 
 ```text
 ashworth-vale-real-estate/
-├── assets/
+├── frontend/
 ├── backend/
-├── index.html
-├── properties.html
-├── agents.html
-├── contact.html
 └── README.md
 ```
 
