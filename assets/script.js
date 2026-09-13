@@ -1,5 +1,5 @@
 /* =========================================================
-   ESTATEHAUS — shared interactivity
+   ASHWORTH & VALE — shared interactivity
    ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -188,48 +188,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Form validation (Enquiry / Appointment) ---------- */
-  document.querySelectorAll('form[data-validate]').forEach(form=>{
-    const success = form.parentElement.querySelector('.form-success');
-    form.addEventListener('submit', (e)=>{
+  /* ---------- ENQUIRY FORM (SMTP + MongoDB) ---------- */
+  const enquiryForm = document.getElementById('enquiryForm');
+  const enquirySuccess = document.getElementById('enquirySuccess');
+
+  // LOCAL TEST: 'http://localhost:5000'
+  // PRODUCTION: 'https://ashworth-vale-backend.onrender.com'
+  const BACKEND_URL = 'http://localhost:5000';
+
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      let valid = true;
-      form.querySelectorAll('[required]').forEach(field=>{
-        const wrap = field.closest('.field');
-        const errorEl = wrap.querySelector('.error');
-        let msg = '';
-        const val = field.value.trim();
-        if(!val){
-          msg = 'This field is required.';
-        } else if(field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
-          msg = 'Enter a valid email address.';
-        } else if(field.type === 'tel' && !/^[0-9+\-\s()]{7,}$/.test(val)){
-          msg = 'Enter a valid phone number.';
-        }
-        if(msg){
-          wrap.classList.add('invalid');
-          if(errorEl) errorEl.textContent = msg;
-          valid = false;
+      if (!enquiryForm.checkValidity()) return;
+
+      const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const formData = new FormData(enquiryForm);
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        interest: formData.get('interest'),
+        message: formData.get('message')
+      };
+
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/enquiry`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          enquirySuccess.textContent = '✅ Thank you — your enquiry has been received. An agent will reach out shortly.';
+          enquirySuccess.classList.add('show');
+          enquiryForm.reset();
         } else {
-          wrap.classList.remove('invalid');
-          if(errorEl) errorEl.textContent = '';
+          enquirySuccess.textContent = data.message || 'Something went wrong. Please try again.';
+          enquirySuccess.classList.add('show');
         }
-      });
-      if(valid){
-        form.reset();
-        if(success) success.classList.add('show');
-        form.style.display = 'none';
+      } catch (err) {
+        enquirySuccess.textContent = "Couldn't reach the server. Please try again.";
+        enquirySuccess.classList.add('show');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+        setTimeout(() => enquirySuccess.classList.remove('show'), 6000);
       }
     });
-    form.querySelectorAll('[required]').forEach(field=>{
-      field.addEventListener('input', ()=>{
-        const wrap = field.closest('.field');
-        if(wrap.classList.contains('invalid') && field.value.trim()){
-          wrap.classList.remove('invalid');
-          wrap.querySelector('.error').textContent = '';
-        }
-      });
-    });
-  });
+  }
 
 });
