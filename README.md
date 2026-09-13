@@ -29,7 +29,17 @@ A premium full-stack real estate website created during my **Full-Stack Develope
 * Agents
 * Contact
 
+
 ## 📁 Structure
+=======
+- `index.html` — Home page
+- `properties.html` — Properties page
+- `agents.html` — Agents page
+- `contact.html` — Contact page
+- `assets/`
+  - `style.css` — Main stylesheet (Theming, Layouts, Animations)
+  - `script.js` — Main JavaScript (Interactivity)
+
 
 ```text
 ashworth-vale-real-estate/
@@ -41,6 +51,7 @@ ashworth-vale-real-estate/
 ├── contact.html
 └── README.md
 ```
+
 
 ## 🌐 Live Website
 
@@ -61,6 +72,9 @@ Open the frontend using **VS Code Live Server**.
 **Swatismita Parida**
 Full-Stack Developer Intern — **SuuSri AI**
 
----
 
 © 2026 Ashworth & Vale
+
+🌐 Live Website
+Click here to view the live site: https://ashworth-vale-realestate-56e505.netlify.app
+
